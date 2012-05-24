@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<title>QUnit Test Suite</title>
+		<link rel="stylesheet" type="text/css" href="lib/qunit.css" media="screen">
+		<style type="text/css">
+			.field, .button, .another_field, .responses, .loading, .testHide{
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+
+		<!--loading -->
+		<div class='loading'>
+			<center></center>
+		</div>
+
+		<h1 id="qunit-header">QUnit Test Suite</h1>
+		<h2 id="qunit-banner"></h2>
+		<div id="qunit-testrunner-toolbar"></div>
+		<h2 id="qunit-userAgent"></h2>
+		<ol id="qunit-tests"></ol>
+
+		<!--
+		message_blue
+		message_green
+		message_green
+		-->
+		<!--responses -->
+		<div class='responses'>
+			<span id='response_1'></span>
+		</div>
+
+		<div id='grid' class='responses grid'>
+		</div>
+
+		<div id="menu" class="menu testHide">
+			<ul class='menuItems'>
+				<li><a id="menu_a" rel="submenu1" href="#">Menu a</a></li>
+				<li><a id="menu_b" rel="submenu2" href="#">Menu b</a></li>
+				<li><a id="menu_c" rel="submenu3" href="#">Menu c</a></li>
+			</ul>
+		</div>
+
+		<div id='submenu1' class='testHide'>
+			<a id="submenu_a_1" href='#'>SubMenu1.1</a>
+			<a id="submenu_a_2" href='#'>SubMenu1.2</a>
+		</div>
+		<div id='submenu2' class='testHide'>
+			<a id="submenu_b_1" href='#'>SubMenu2.1</a>
+			<a id="submenu_b_2" href='#'>SubMenu2.2</a>
+			<a id="submenu_b_3" href='#'>SubMenu2.3</a>
+		</div>
+		<div id='submenu3' class='testHide'>
+			<a id="submenu_c_1" href='#'>SubMenu3.1</a>
+			<a id="submenu_c_2" href='#'>SubMenu3.2</a>
+			<a id="submenu_c_3" href='#'>SubMenu3.3</a>
+			<a id="submenu_c_4" href='#'>SubMenu3.4</a>
+		</div>
+
+		<!-- scripts -->
+		<script type="text/javascript" src="../lib/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="lib/jquery.mockjax.js"></script>
+		<script type="text/javascript" src="lib/qunit.js"></script>
+		
+		<!-- classes -->
+		<script type="text/javascript" src="../emitter.js"></script>
+		<script type="text/javascript" src="../permissions.js"></script>
+		<script type="text/javascript" src="../menu.js"></script>
+		<script type="text/javascript" src="../menu_builder.js"></script>
+		<script type="text/javascript" src="../menu_view.js"></script>
+
+		<!-- tests -->
+		<script type="text/javascript" src="permissions.test.js"></script>
+		<script type="text/javascript" src="menu.test.js"></script>
+		<script type="text/javascript" src="menu_builder.test.js"></script>
+		<script type="text/javascript" src="menu_view.test.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				/*$(window).bind('beforeunload', function(){
+					return "";
+				});*/
+			});
+		</script>	
+	</body>
+</html>
