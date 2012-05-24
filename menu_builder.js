@@ -44,19 +44,23 @@
 
 		api.getMenu = function(menuName){
 			if(!menuExists(menuName)){
-				var submenuGot = null;
-				$.each(mainMenus, function(index, menu){
-					if(typeof menu !== 'function'){
-						var subMenu = menu.getSubMenu(menuName);
-						if(subMenu){
-							submenuGot = subMenu;
-							return false;
-						}
-					}
-				});
-				return submenuGot;
+				return lookForTheMenuIntoSubmenus(menuName);
 			}
 			return mainMenus[menuName];
+		}
+
+		var lookForTheMenuIntoSubmenus = function(menuName){
+			var submenuGot = null;
+			$.each(mainMenus, function(index, menu){
+				if(typeof menu !== 'function'){
+					var subMenu = menu.getSubMenu(menuName);
+					if(subMenu){
+						submenuGot = subMenu;
+						return false;
+					}
+				}
+			});
+			return submenuGot;
 		}
 
 		api.menu = function(key){
