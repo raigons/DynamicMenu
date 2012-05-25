@@ -45,6 +45,7 @@
 			return list;
 		}		
 	};
+		
 	/*
 	* recursive algorithm to find all submenus until an item does not have 
 	* a submenu
